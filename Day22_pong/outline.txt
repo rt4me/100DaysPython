@@ -1,0 +1,22 @@
+Elements in Pong that could be broken up into their own methods
+
+My initial ideas:
+Board with divider
+Ball movement
+Score keeping (part of paddle/player instance)
+Score display
+Paddle movement
+
+Her breakdown:
+Create the screen  600x800
+Create and move a paddle
+Create another paddle
+Create the ball and make it move
+Detect collision with wall and bounce
+Detect collision with paddle
+Detect when paddle misses
+Keep score
+
+
+
+
