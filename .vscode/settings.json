@@ -1,0 +1,12 @@
+
+
+{
+    // ...
+    "flake8.args": [
+     "--max-line-length", "88",
+     "--extend-ignore", "E265,E302,E303,E305,F405,F403,E501"
+    ],
+ }
+ 
+ 
+ 
