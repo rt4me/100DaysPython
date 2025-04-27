@@ -1,4 +1,6 @@
 from tkinter import *
+from tkinter import messagebox
+from password_gen import PassGen as pg
 
 WHITE = "#ffffff"
 PINK = "#e2979c"
@@ -7,12 +9,36 @@ GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
 
+
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def generate_pass():
-    pass
+    # Clear out whatever is already in the password field
+    password_entry.delete(0,END)
+    
+    new_pass = pg.generate_password()
+    password_entry.insert(0, new_pass)
+
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def add_password():
-    pass
+    
+    # Get current values from entry boxes
+    website = website_entry.get()
+    email = email_entry.get()
+    password = password_entry.get()
+    
+    if len(website) == 0 or len(password) == 0:
+        messagebox.showinfo(title="Oops", message="Please don't leave any fields empty!", )
+    else: 
+        is_ok = messagebox.askokcancel(title=website, message=(f"These are the details entered: \nEmail: {email} \nPassword: {password} \nIs it ok to save?"))
+        
+        if is_ok:
+            print(f"{website} | {email} | {password}")
+            with open('Day29_Password_Manager\\data.txt','a') as f:
+                f.write(f"{website} | {email} | {password}\n")
+                website_entry.delete(0,END)
+                password_entry.delete(0,END)
+    
+    
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Password Manager")
@@ -30,18 +56,22 @@ canvas.grid(column=2, row=1)
 # Labels
 website_label = Label(text="Website: ",font=(FONT_NAME,12,),)
 website_label.grid(column=1, row=2)
-email_un_label = Label(text="Email//Username: ", font=(FONT_NAME, 12,),)
+email_un_label = Label(text="Email/Username: ", font=(FONT_NAME, 12,),)
 email_un_label.grid(column=1, row=3)
 password_label = Label(text="Password: ", font=(FONT_NAME, 12,),)
 password_label.grid(column=1, row=4)
 
 # Text entry boxes
-website_box = Entry(width=45)
-website_box.grid(column=2, row=2, columnspan=2)
-username_box = Entry(width=45)
-username_box.grid(column=2, row=3, columnspan=2)
-password_box = Entry(width=27)
-password_box.grid(column=2, row=4)
+website_entry = Entry(width=45)
+website_entry.grid(column=2, row=2, columnspan=2)
+# Place cursor in this box by default
+website_entry.focus()
+email_entry = Entry(width=45)
+email_entry.grid(column=2, row=3, columnspan=2)
+# Pre-populate email field with an email address. 0 represents the beginning of the field.
+email_entry.insert(0, 'tim.bergin@gmail.com')
+password_entry = Entry(width=27)
+password_entry.grid(column=2, row=4)
 
 # Buttons
 genpass_button = Button(text="Generate Password", command=generate_pass)
