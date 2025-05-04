@@ -1,6 +1,4 @@
 requests
 selenium
-logging
 beautifulsoup4
 pandas
-turtle
