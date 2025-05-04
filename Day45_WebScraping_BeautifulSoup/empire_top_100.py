@@ -25,6 +25,15 @@ def get_list_of_movies(url):
         logging.error(f"Error fetching URL {url}: {e}")
     except Exception as e:
         logging.error(f"Error processing URL {url}: {e}")
+    
+    movie_list = soup_main.find_all('strong')
+    
+    print(movie_list)
 
-    with open(f"Day45_WebScraping_BeautifulSoup\\{filename}", "w", encoding="utf-8") as f:
-                f.write(text_content)
+    # with open(f"Day45_WebScraping_BeautifulSoup\\{filename}", "w", encoding="utf-8") as f:
+    #             f.write(text_content)
+    
+    
+    
+    if __name__ == "__main__":
+        get_list_of_movies(base_url)

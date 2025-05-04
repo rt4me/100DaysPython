@@ -1,0 +1,37 @@
+# .flake8
+
+[flake8]
+# Allow slightly longer lines (default is 79)
+max-line-length = 88
+
+# Ignore some rules that conflict with black or are too picky
+ignore = 
+    E203,  # Whitespace before ':', conflicts with black
+    W503,  # Line break before binary operator, conflicts with black
+    E261,  # at least two spaces before inline comment
+    E231,  # Missing whitespace after a comma, semicolon, or colon.
+    E265,  # Block comment should start with a `#` followed by a space.
+    E302,  # Expected 2 blank lines, found fewer.
+    E303,  # Too many blank lines (more than 2).
+    E305,  # Expected 2 blank lines after a class or function definition.
+    F405,  # Name may be undefined or not imported from a module (e.g., using `from module import *`).
+    F403,  # 'Import *' used; unable to detect undefined names.
+    E501,  # Line too long (exceeds the maximum line length).
+    E251,  # Unexpected spaces around keyword/parameter equals.
+
+# Exclude common non-code folders
+exclude =
+    .git,
+    __pycache__,
+    venv,
+    .venv,
+    build,
+    dist,
+    .devcontainer
+
+# Show source for each error (useful for learning)
+show-source = true
+
+# Enable per-file-ignores if needed in the future
+# per-file-ignores =
+#     day01/main.py: E402

@@ -1,22 +1,11 @@
 
-
+// .vscode/settings.json
 {
-    // ...
-    "flake8.args": [
-     "--max-line-length", "88",
-     "--extend-ignore", "E261, E231, E265, E302, E303, E305, F405, F403, E501, E251"
-                    // E261 : at least two spaces before inline comment
-                    // E231 : Missing whitespace after a comma, semicolon, or colon.
-                    // E265 : Block comment should start with a `#` followed by a space.
-                    // E302 : Expected 2 blank lines, found fewer.
-                    // E303 : Too many blank lines (more than 2).
-                    // E305 : Expected 2 blank lines after a class or function definition.
-                    // F405 : Name may be undefined or not imported from a module (e.g., using `from module import *`).
-                    // F403 : 'Import *' used; unable to detect undefined names.
-                    // E501 : Line too long (exceeds the maximum line length).
-                    // E251 : Unexpected spaces around keyword/parameter equals.
-    ],
- }
- 
- 
- 
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+      "--max-line-length=88",
+      "--ignore=E203,W503"
+    ]
+  }
+  
