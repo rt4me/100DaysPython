@@ -24,8 +24,7 @@ def create_codeword():
         except Exception as e:
             print(f"An unexpected error occurred during codeword creation: {e}")
             return create_codeword()
-        else:
-            return output_list    
+    return output_list    
         
         
 print(create_codeword())

@@ -1,6 +1,8 @@
-from tkinter import *
-from tkinter import messagebox
+import tkinter
+# from tkinter import *
+# from tkinter import messagebox
 from password_gen import PassGen as pg
+import json
 
 WHITE = "#ffffff"
 PINK = "#e2979c"
@@ -25,18 +27,19 @@ def add_password():
     website = website_entry.get()
     email = email_entry.get()
     password = password_entry.get()
+    new_data = {
+        website: {"email": email,
+                  "password": password
+        }
+    }
     
     if len(website) == 0 or len(password) == 0:
         messagebox.showinfo(title="Oops", message="Please don't leave any fields empty!", )
     else: 
-        is_ok = messagebox.askokcancel(title=website, message=(f"These are the details entered: \nEmail: {email} \nPassword: {password} \nIs it ok to save?"))
-        
-        if is_ok:
-            print(f"{website} | {email} | {password}")
-            with open('Day29_Password_Manager\\data.txt','a') as f:
-                f.write(f"{website} | {email} | {password}\n")
-                website_entry.delete(0,END)
-                password_entry.delete(0,END)
+        with open('Day29_Password_Manager\\data.json','w') as f:
+            json.dump(new_data, f)
+            website_entry.delete(0,END)
+            password_entry.delete(0,END)
     
     
 # ---------------------------- UI SETUP ------------------------------- #
