@@ -23,6 +23,8 @@ WRONG_IMG = PhotoImage(file='Day31_Flash_Card_Capstone/images/wrong.png')
 canvas = Canvas(width=800 , height=526 ,bg = BACKGROUND_COLOR, highlightthickness=0)
 card_front_img = PhotoImage(file='Day31_Flash_Card_Capstone/images/card_front.png')
 canvas.create_image(400,263,image = card_front_img)
+title_text = canvas.create_text(400, 150, text="French", font=("Ariel", 40, "italic"))
+word_text = canvas.create_text(400, 253, text = "French Word", font=("Ariel", 60, "bold"))
 canvas.grid(column=1, row=1, columnspan=2)
 
 # Buttons
