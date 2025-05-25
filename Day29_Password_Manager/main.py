@@ -1,5 +1,6 @@
-from tkinter import *
-from tkinter import messagebox
+import tkinter
+# from tkinter import *
+# from tkinter import messagebox
 from password_gen import PassGen as pg
 import json
 import logging

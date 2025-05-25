@@ -12,21 +12,14 @@ def wrong_answer():
     pass
 
 
-#============================= Create Flashcard =====================
-def create_card():
+#====================Create Card===============================
 
-    lang_data = pd.read_csv('Day31_Flash_Card_Capstone\data\french_words.csv')
-    lang_dict = lang_data.to_dict(orient='records')
+def create_card():
+    data = pd.read_csv("Day31_Flash_Card_Capstone\data\french_words.csv")
+    data_dict = data.to_dict(orient="records")
     
-    word = random.choice(lang_dict[1])
-    print(word)
-    
-    
-    
-    
-    
-    
-    
+    word = random.choic(data_dict)
+
 
 
 #================================ UI =================================
@@ -52,6 +45,6 @@ def create_card():
 # wrong_button.grid(column=2,row=2)
 
 
-create_card()
+# window.mainloop()
 
-#window.mainloop()
+create_card()
