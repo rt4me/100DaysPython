@@ -8,8 +8,10 @@ BACKGROUND_COLOR = "#B1DDC6"
 
 # french_words.csv is the main list of study words.
 # words_to_learn.csv is the list of words the user needs to work on.
-# If words_to_learn.csv doesn't exist, read information from french_words.csv, create a words_to_learn.csv containing all the information from the french_words.csv.
-# when using the application, if the user knows the french to english pair, they will select the Correct button, which will remove the word from the list of words_to_learn.
+# If words_to_learn.csv doesn't exist, read information from french_words.csv, 
+# create a words_to_learn.csv containing all the information from the french_words.csv.
+# when using the application, if the user knows the french to english pair, 
+# they will select the Correct button, which will remove the word from the list of words_to_learn.
 
 
 try:
