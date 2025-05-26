@@ -19,7 +19,6 @@ RUN apt-get update && \
 RUN apt-get update && apt-get install -y git \
     # Clean up apt lists again (or combine with the first cleanup if convenient)
     && rm -rf /var/lib/apt/lists/*
->>>>>>> 5fe10d14cae0d56e53adcca949a9414f1a5b0af2
 
 WORKDIR /app
 
